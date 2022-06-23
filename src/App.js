@@ -4,7 +4,6 @@ import { useState } from "react";
 import Chat from "./Chat";
 
 const socket = io('https://livechat00001.herokuapp.com/', { transports : ['websocket'] });
-
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
@@ -21,10 +20,10 @@ function App() {
     <div className="App">
       {!showChat ? (
         <div className="joinChatContainer">
-          <h3>Join A Chat</h3>
+          <h3>Live Chat</h3>
           <input
             type="text"
-            placeholder="John..."
+            placeholder="Name..."
             onChange={(event) => {
               setUsername(event.target.value);
             }}
@@ -36,7 +35,7 @@ function App() {
               setRoom(event.target.value);
             }}
           />
-          <button onClick={joinRoom}>Join A Room</button>
+          <button onClick={joinRoom}>Join Room</button>
         </div>
       ) : (
         <Chat socket={socket} username={username} room={room} />
