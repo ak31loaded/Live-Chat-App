@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
 
-const socket = io('http://localhost:3001/', { transports : ['websocket'] });
+const socket = io('https://live-chat-app-backend-qpia.onrender.com', { transports : ['websocket'] });
 function App() {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
